@@ -10,7 +10,7 @@ const {cartItems} =storeToRefs(store);
       <h1>This is the cartView page</h1>
       <div v-if="cartItems.length>0">
         <div v-for="i in cartItems" >
-            <h1></h1>
+            <h1>{{ i.title }}</h1>
             <button v-on:click="removeItems(i.id)">Remove</button>
         </div>
       </div>

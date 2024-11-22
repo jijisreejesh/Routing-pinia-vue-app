@@ -12,10 +12,13 @@ export const useCartStore=defineStore("cart",()=>{
     //actions
     const addItems=(item)=>{
         //find object whose id similar to item
-        const checkItems=cartItems.value.find((x)=>x.id===item.id)
-        if(!checkItems){
-            cartItems.value.push(item)
-        }
+        // console.log("AddItems method working");
+        
+        // const checkItems=cartItems.value.find((x)=>x.id===item.id)
+        // if(!checkItems){
+        //     cartItems.value.push(item)
+        // }
+        cartItems.value.push(item)
     }
     const removeItems=(id)=>{
         cartItems.value=cartItems.value.filter((x)=>x.id!==id)
