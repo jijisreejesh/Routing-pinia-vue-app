@@ -5,10 +5,10 @@ export const useCartStore=defineStore("cart",()=>{
     const cartItems=ref([]);
 
     //getter
-    // const sortItems=computed(()=>{
-    //     [...cartItems.value].sort((a,b)=>b.id-a.id)
-    // })
-    
+    const sortItems=computed(()=>{
+        [...cartItems.value].sort((a,b)=>b.id-a.id)
+    })
+
     //actions
     const addItems=(item)=>{
         //find object whose id similar to item
@@ -20,5 +20,5 @@ export const useCartStore=defineStore("cart",()=>{
     const removeItems=(id)=>{
         cartItems.value=cartItems.value.filter((x)=>x.id!==id)
     }
-    return {cartItems,addItems,removeItems};
+    return {cartItems,addItems,sortItems,removeItems};
 });

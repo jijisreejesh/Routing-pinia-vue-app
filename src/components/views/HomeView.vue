@@ -1,8 +1,8 @@
 <script setup>
 import {ref} from 'vue';
-// import { useCartStore } from '../stores/cart';
-// const store=useCartStore();
-// const {addItems}=store;
+import { useCartStore } from '../stores/cart';
+const store=useCartStore();
+const {addItems}=store;
 const items=ref([
     {
         title : 'Hp',
@@ -30,7 +30,7 @@ const items=ref([
 <template>
     <div v-for="i in items" :key="i.id">
         <h1>{{ i.title }}</h1>
-        <button>Add</button>
+        <button @click="addItems(i)">Add</button>
     </div>
 
 </template>
