@@ -11,5 +11,11 @@ export const useCartStore=defineStore("cart",()=>{
     const removeItems=(id)=>{
         cartItems.value=cartItems.value.filter((x)=>x.id!==id)
     }
-    return {cartItems,addItems,removeItems};
+    // getters
+    const sortItems=computed(()=>{
+      
+        cartItems.value.sort((a, b) => a.title.localeCompare(b.title));
+       
+    })
+    return {cartItems,addItems,removeItems,sortItems};
 });

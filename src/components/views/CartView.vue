@@ -1,9 +1,11 @@
-// <script setup>
- import { useCartStore } from '../stores/cart';
+ <script setup>
+
+import { useCartStore } from '../stores/cart';
 import { storeToRefs } from "pinia";//it helps to add reactivity to the state
 const store=useCartStore();
  const {removeItems}=store;
-const {cartItems} =storeToRefs(store);
+const {cartItems} = storeToRefs(store);
+
 </script>
 <template>
     <div>
